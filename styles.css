@@ -1,0 +1,107 @@
+
+.wrapper {
+  min-height: 250px;
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  gap: 0.675rem;
+  margin-top: 15%;
+
+
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    text-align:center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 28px; 
+    span {
+      color: #52D987
+    }
+  }
+
+  .process-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .progress-bar-container {
+      position: absolute;
+      width: 100%;
+      height: 10rem;
+
+      > ul {
+        width: 100%;
+        padding: 1rem 0 0 0;
+        margin: -40 0 0 0;
+        z-index:9999;
+        position:absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > li {
+          list-style: none;
+          width: calc(100% / 7);
+          height:60px;
+          color:#aaa;          
+          text-transform:uppercase;          
+          font-size:14px;
+          font-weight:700;          
+          transition:all ease 0.2s;          
+          position:relative;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          flex-direction: column;
+
+          &.active,
+          &:hover {
+            color: #52D987
+          }
+
+          &:after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #777;
+            border: 7px solid #fff;
+            border-radius: 50%;
+            margin-top: 1.25rem;
+            box-shadow: 0 2px 13px -1px rgba(0,0,0,0.3);
+            transition: all ease 0.2s;
+          }
+          &:hover:after {
+            background: #52D987;
+          }
+          &.active:after {
+            background:#52D987;
+          }
+        }
+      }
+      .line {
+        position: absolute;
+        border: 1px solid #fff;
+        width: 100%;
+        height: 6px;   
+        background: #eee;
+        top:60px;
+        z-index:1;
+        border-radius:50px;
+        transition:all ease 0.9s;
+
+        .line-progress {
+          content:"";
+          width: calc((100% / 6) / 2);
+          height: 100%;
+          background: #207893;	 
+          background: linear-gradient(to right, #00ad17 0%,#33fa4e 100%); 
+          position: absolute;
+          z-index: 2;
+          border-radius: 50px;
+          transition: all ease 0.9s;
+        }
+      }
+    }
+  }
+}
